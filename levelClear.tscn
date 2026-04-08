@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b6pevblqb48fw"]
+
+[ext_resource type="Script" uid="uid://tugi1gbysxq6" path="res://button_2.gd" id="1_jrttd"]
+
+[node name="Control" type="Control" unique_id=183996167]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button2" type="Button" parent="." unique_id=132287380]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 181.0
+offset_right = 721.0
+offset_bottom = 243.0
+text = "Play Again"
+script = ExtResource("1_jrttd")
+
+[node name="Button3" type="Button" parent="." unique_id=1976377009]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 273.0
+offset_right = 721.0
+offset_bottom = 335.0
+text = "Quit"
+
+[connection signal="pressed" from="Button3" to="Button2" method="_on_button_3_pressed"]
