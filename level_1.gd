@@ -24,8 +24,6 @@ func _process(delta):
 
 func spawn_star():
 	var star = star_scene.instantiate()
-	var screen_width = get_viewport().get_visible_rect().size.x
+	var screen_width = get_tree().root.size.x
 	star.position = Vector2(randf_range(20, screen_width - 20), -30)
-	#print("Spawned star at: ", star.position)
-	#print("Screen size: ", get_viewport().get_visible_rect().size)
 	add_child(star)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b6pevblqb48fw"]
 
 [ext_resource type="Script" uid="uid://tugi1gbysxq6" path="res://button_2.gd" id="1_jrttd"]
+[ext_resource type="PackedScene" uid="uid://c5cl572vxpce" path="res://hud.tscn" id="2_d33ha"]
 
 [node name="Control" type="Control" unique_id=183996167]
 layout_mode = 3
@@ -26,5 +27,7 @@ offset_top = 273.0
 offset_right = 721.0
 offset_bottom = 335.0
 text = "Quit"
+
+[node name="hud" parent="." unique_id=2110070194 groups=["main"] instance=ExtResource("2_d33ha")]
 
 [connection signal="pressed" from="Button3" to="Button2" method="_on_button_3_pressed"]

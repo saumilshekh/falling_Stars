@@ -6,23 +6,15 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_64ctp"]
 
-[node name="HUD" type="Control" unique_id=981240429]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2110070194]
 script = ExtResource("1_37p78")
 
-[node name="ScoreLabel" type="Label" parent="." unique_id=1205475523]
-layout_mode = 0
+[node name="ScoreLabel" type="Label" parent="." unique_id=1148172466]
 offset_right = 309.0
 offset_bottom = 83.0
 label_settings = SubResource("LabelSettings_37p78")
 
-[node name="LivesLabel" type="Label" parent="." unique_id=905206728]
-layout_mode = 0
+[node name="LivesLabel" type="Label" parent="." unique_id=699856888]
 offset_left = 779.0
 offset_top = 1.0
 offset_right = 1153.0

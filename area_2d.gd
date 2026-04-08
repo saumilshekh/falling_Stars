@@ -15,4 +15,5 @@ func _physics_process(delta):
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "CharacterBody2D":
 		body.increaseScore()
+		$AudioStreamPlayer2D.play()
 		queue_free()

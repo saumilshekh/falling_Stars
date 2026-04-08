@@ -9,13 +9,14 @@ const gravity = 980
 
 func increaseScore():
 	score += 1
-	var hud = get_tree().get_first_node_in_group("hud")
+	var hud =get_node("/root/Node2D/hud")
 	if hud:
+		print(score)
 		hud.update_score(score)
 
 func lose_life():
 	lives -= 1
-	var hud = get_tree().get_first_node_in_group("hud")
+	var hud = get_node("/root/Node2D/hud")
 	if hud:
 		hud.update_lives(lives)
 	if lives <= 0:
@@ -24,14 +25,14 @@ func lose_life():
 # bucket.gd
 
 func _ready():
-	var hud = get_tree().get_first_node_in_group("hud")
+	#get_tree().root.print_tree_pretty()
+	var hud = get_node("/root/Node2D/hud")
 	if hud:
-		print("HUD found!")
+		print("HUD found: ", hud.name)
 		hud.update_score(0)
 		hud.update_lives(lives)
 	else:
 		print("HUD not found!")
-
 var speed = 400
 var base_speed = 300.0
 func _physics_process(delta):
@@ -42,7 +43,6 @@ func _physics_process(delta):
 	speed = base_speed
 	
 	if main:
-		print("elapsed: ", main.elapsed_time)
 		speed = base_speed + main.elapsed_time * 10.0
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
