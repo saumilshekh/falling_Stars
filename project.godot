@@ -15,6 +15,10 @@ run/main_scene="res://startScreen.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://yorbv7mkocdb"
+
 [editor]
 
 version_control/autoload_on_startup=true

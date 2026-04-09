@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://tugi1gbysxq6" path="res://button_2.gd" id="1_jrttd"]
 [ext_resource type="PackedScene" uid="uid://c5cl572vxpce" path="res://hud.tscn" id="2_d33ha"]
+[ext_resource type="Script" uid="uid://dbr26hkxe1v02" path="res://label.gd" id="3_kyrxe"]
+[ext_resource type="Script" uid="uid://dwyqhi7ip64h0" path="res://parallax_background.gd" id="4_m32bs"]
+[ext_resource type="Texture2D" uid="uid://cpmjhoqrds3n0" path="res://pixelart_starfield_diagonal_diffraction_spikes.png" id="5_hv8aw"]
+[ext_resource type="Script" uid="uid://b5dxxe2fwqddu" path="res://sprite_2d.gd" id="6_qy364"]
 
 [node name="Control" type="Control" unique_id=183996167]
 layout_mode = 3
@@ -30,4 +34,37 @@ text = "Quit"
 
 [node name="hud" parent="." unique_id=2110070194 groups=["main"] instance=ExtResource("2_d33ha")]
 
+[node name="Label" type="Label" parent="." unique_id=834868508]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 90.0
+offset_right = 682.0
+offset_bottom = 128.0
+horizontal_alignment = 1
+script = ExtResource("3_kyrxe")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Label" unique_id=1893204796]
+script = ExtResource("4_m32bs")
+
+[node name="Parallax2D" type="Parallax2D" parent="Label/ParallaxBackground" unique_id=480352628]
+
+[node name="Sprite2D" type="Sprite2D" parent="Label/ParallaxBackground/Parallax2D" unique_id=1669554021]
+position = Vector2(570, 631)
+scale = Vector2(4, 4)
+texture = ExtResource("5_hv8aw")
+script = ExtResource("6_qy364")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Label/ParallaxBackground/Parallax2D" unique_id=1394790925]
+position = Vector2(576, 1095)
+scale = Vector2(4, 4)
+texture = ExtResource("5_hv8aw")
+script = ExtResource("6_qy364")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Label/ParallaxBackground/Parallax2D" unique_id=978348863]
+position = Vector2(574, 16)
+scale = Vector2(4, 4)
+texture = ExtResource("5_hv8aw")
+script = ExtResource("6_qy364")
+
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
 [connection signal="pressed" from="Button3" to="Button2" method="_on_button_3_pressed"]

@@ -11,6 +11,7 @@ func increaseScore():
 	score += 1
 	var hud =get_node("/root/Node2D/hud")
 	if hud:
+		$AudioStreamPlayer2D.play()
 		print(score)
 		hud.update_score(score)
 
@@ -26,7 +27,7 @@ func lose_life():
 
 func _ready():
 	#get_tree().root.print_tree_pretty()
-	var hud = get_node("/root/Node2D/hud")
+	var hud = get_node("/root/Node2D/CanvasLayer")
 	if hud:
 		print("HUD found: ", hud.name)
 		hud.update_score(0)

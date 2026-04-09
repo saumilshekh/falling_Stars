@@ -12,7 +12,8 @@ func _ready():
 func _process(delta):
 	elapsed_time += delta
 	spawn_timer += delta
-	if elapsed_time >= 60:
+	if elapsed_time >= 60.0:
+		Global.final_score = get_node("/root/Node2D/CharacterBody2D").score
 		get_tree().change_scene_to_file("res://levelClear.tscn")
 
 	# Spawn interval shrinks over time (starts at 2s, floors at 0.2s)
